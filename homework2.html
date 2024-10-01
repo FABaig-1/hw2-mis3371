@@ -13,5 +13,72 @@
           <td><span class="error" id="firstNameError"></span></td>
           
         </tr>
+
+        <tr>
+          <td><lable for ="middle initial">Middle Initial:</lable></td>
+          <td><input type="text" id="middleinitial" name="middleinitial" maxlength="1" pattern="[A-Za-z]?" title="Only one letter allowed." required></td>
+          <td><span class="error" id="middleinitialError"></span></td>
+        </tr>
+         
+        <tr>
+         <td><lable for ="Last Name">Last Name:</lable></td>
+          <td><input type="text" id="LastName" name="LastName" maxlength="30" pattern="[A-Za-z'0-9 -]+" title="Only letters, apostrophes, dashes, and numbers (2 to 5) are allowed.." required></td>
+          <td><span class="error" id="LastNameError"></span></td>
+        </tr>
+
+        <tr>
+          <td><lable for ="ssn">Social Security:</lable></td>
+          <td><input type="text" id="SSN" name="SSN" maxlength="10" pattern="\d{3}-\d{2}-\d{4}" title="Valid Format:xxx-xx-xxxx " required></td>
+          <td><span class="error" id="ssnError"></span></td>
+        </tr>
+
+        <!-- 3 dates-->
+
+        <tr>
+          <td><label for="birthdate">Birth Date (mm/dd/yyyy):</label></td>
+          <td><input type="date" id="birthdate" name="birthdate" max="" required></td>
+          <td><span class="error" id="birthdateerror"></span></td>
+        </tr>
+
+        <tr>
+          <td><label for="moveInDate">Move-InDate:</label></td>
+          <td><input type="date" id="moveInDate" name="moveInDate" min="" required></td>
+          <td><span class="error" id="Move-InDateerror"></span></td>
+        </tr>
+
+        <tr>
+          <td><label for="travelDate">Travel Date:</label></td>
+          <td><input type="date" id="Travel Date" name="travelDate" min="" required></td>
+          <td><span class="error" id="Travel date error"></span></td>
+        </tr>
+
+        <!--End of block 1-->
+        
+        <tr>
+          <td><label for="email">Email Adress:</label></td>
+          <td><input type="email" id="email" name="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter valid email: name@domain.tld" required></td>
+          <td><span class="error" id="Email-error"></span></td>
+        </tr>
+
+        <tr>
+          <td><label for="Phone">Phone Number:</label></td>
+          <td><input type="tel" id="Phone" name="Phone" pattern="\d{3}-\d{3}-\d{4}" title="Enter valid Phone#" required></td>
+          <td><span class="error" id="Phone-error"></span></td>
+        </tr>
+        
+
+        
+
+        
+
+
+
+
+
+
+      
+
+
+
       </table>
-  </body>
+  </body> 
