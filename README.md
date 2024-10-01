@@ -1,1 +1,17 @@
-# hw2-mis3371
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form validation</title>
+  </head>
+  <body>
+    <form id="form">
+      <table>
+        <tr>
+         
+          <td><lable for ="first name">First Name:</lable></td>
+          <td><input type="text" id="first name" name="first name" maxlength="30" pattern="[A-Za-z' -]+" title="Only letters, apostrophes, and dashes are allowed." required></td>
+          <td><span class="error" id="firstNameError"></span></td>
+          
+        </tr>
+      </table>
+  </body>
