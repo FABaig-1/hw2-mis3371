@@ -1,41 +1,52 @@
+ <!-- Program name: homework2.html
+Author: Faizan Baig, ID 2261920
+Date created: 10/01/24
+Date last edited: 10/11/24
+Version: 1.0 made edits along the way
+Description: This registration page will be updated to include a "Review" button, which will allow the user to review their
+information before submission.  -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Form validation</title>
-  </head>
-  <body>
-    <form id="form">
-      <table>
-        <tr>
-         
-          <td><lable for ="first name">First Name:</lable></td>
-          <td><input type="text" id="first name" name="first name" maxlength="30" pattern="[A-Za-z' -]+" title="Only letters, apostrophes, and dashes are allowed." required></td>
-          <td><span class="error" id="firstNameError"></span></td>
-          
-        </tr>
+<title>Homework2 validation</title>
+<link rel="stylesheet" href="hw2style.css"
 
+</head>
+  
+  <body>
+    <div class="validation"
+    <form id="registrationForm">
+      <table>
+        
+       <tr>
+        <td><lable for ="firstName">First Name:</lable></td>
+          <td><input type="text" id="firstName" name="firstName" maxlength="30" pattern="[A-Za-z' -]{1,30}+" title="Only letters, apostrophes, and dashes are allowed." required></td>
+          <td><span class="error" id="firstNameError"></span></td>
+       </tr>
+        
         <tr>
-          <td><lable for ="middle initial">Middle Initial:</lable></td>
-          <td><input type="text" id="middleinitial" name="middleinitial" maxlength="1" pattern="[A-Za-z]?" title="Only one letter allowed." required></td>
+          <td><lable for ="middleInitial">Middle Initial:</lable></td>
+          <td><input type="text" id="middleinitial" name="middleinitial" maxlength="1" pattern="[A-Za-z]?" title="1 character, letters only, no numbers, blank/null ok." required></td>
           <td><span class="error" id="middleinitialError"></span></td>
         </tr>
          
         <tr>
-         <td><lable for ="Last Name">Last Name:</lable></td>
-          <td><input type="text" id="LastName" name="LastName" maxlength="30" pattern="[A-Za-z'0-9 -]+" title="Only letters, apostrophes, dashes, and numbers (2 to 5) are allowed.." required></td>
+         <td><lable for ="lastName">Last Name:</lable></td>
+          <td><input type="text" id="LastName" name="LastName" maxlength="30" pattern="[A-Za-z' -\d]{1,30}" title="Only letters, apostrophes, dashes, and numbers (2 to 5) are allowed.." required></td>
           <td><span class="error" id="LastNameError"></span></td>
         </tr>
 
         <tr>
-          <td><lable for ="ssn">Social Security:</lable></td>
-          <td><input type="text" id="SSN" name="SSN" maxlength="10" pattern="\d{3}-\d{2}-\d{4}" title="Valid Format:xxx-xx-xxxx " required></td>
+          <td><lable for ="ssn">Social Security Number:</lable></td>
+          <td><input type="text" id="SSN" name="SSN" maxlength="11" pattern="\d{3}-\d{2}-\d{4}" title="Valid Format:xxx-xx-xxxx " required></td>
           <td><span class="error" id="ssnError"></span></td>
         </tr>
 
         <!-- 3 dates-->
 
         <tr>
-          <td><label for="birthdate">Birth Date (mm/dd/yyyy):</label></td>
+          <td><label for="birthDate">Birth Date (MM/DD/YYYY):</label></td>
           <td><input type="date" id="birthdate" name="birthdate" max="" required></td>
           <td><span class="error" id="birthdateerror"></span></td>
         </tr>
@@ -53,19 +64,235 @@
         </tr>
 
         <!--End of block 1-->
-        
+
         <tr>
-          <td><label for="email">Email Adress:</label></td>
-          <td><input type="email" id="email" name="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter valid email: name@domain.tld" required></td>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="Email" title="Please enter valid email: name@domain.tld" required></td>
           <td><span class="error" id="Email-error"></span></td>
         </tr>
 
         <tr>
           <td><label for="Phone">Phone Number:</label></td>
-          <td><input type="tel" id="Phone" name="Phone" pattern="\d{3}-\d{3}-\d{4}" title="Enter valid Phone#" required></td>
+          <td><input type="tel" id="Phone" name="Phone" pattern="\d{3}-\d{3}-\d{4}" title="format: 000-000-0000" required></td>
           <td><span class="error" id="Phone-error"></span></td>
         </tr>
+
+        <!--End of block 2-->
         
+        <tr>
+          <td><label for="address1">Address Line 1:</label></td>
+          <td><input type="text" id="adress1" name="adress1" minlength="2" maxlength="30" title="2-30 characters" required></td>
+          <td><span class="error" id="adress1-error"></span></td>
+        </tr>
+
+        <tr>
+          <td><label for="City">CITY:</label></td>
+          <td><input type="text" id="City" name="City" minlength="2" maxlength="30" title="2-30 characters" required></td>
+          <td><span class="error" id="city-error"></span></td>
+        </tr>
+
+        <tr>
+          <td><label for="state">State:</label></td>
+          <td>
+            <select id="state" name="state" required>
+                  <option value="">(Choose a State)</option>
+                  <option value="AL">AL</option>
+                  <option value="AK">AK</option>
+                  <option value="AZ">AZ</option>
+                  <option value="AR">AR</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DE">DE</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="HI">HI </option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="IA">IA</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="ME">ME</option>
+                  <option value="MD">MD</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MS">MS</option>
+                  <option value="MO">MO</option>
+                  <option value="MT">MT</option>
+                  <option value="NE">NE</option>
+                  <option value="NV">NV</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NY">NY</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VT">VT</option>
+                  <option value="VA">VA</option>
+                  <option value="WA">WA</option>
+                  <option value="WV">WV</option>
+                  <option value="WI">WI</option>
+                  <option value="WY">WY</option>
+            </select>
+        </td>
+        <td><span class="error-message" id="stateError"></span></td>
+     </tr>
+           <tr>
+                <td><label for="zip>Zip Code:</label></td>
+                <td><input type="text" id="Zip-code" name="zipCode" pattern="^\d{5}(-\d{4})?$" maxlength="10" title="Enter zipCode (e.g., 12345 or 12345-6789)" required></td>
+                <td><span class="error-message" id="ZipCode Error"></span></td>
+          </tr>
+      <!--end of block 3-->
+      
+      <tr>
+        <td colspan="3"<strong><b>Medical History Check all that apply:</b></strong></td>
+      </tr>
+     
+  <tr>
+      <td colspan="3">
+        <label>
+          <input type="checkbox" name="Medical History" value="ChickenPox"> ChickenPox
+        </label><br>
+        <label>
+          <input type="checkbox" name="Medical History" value="Mealses"> Mealses
+        </label><br>
+        <label>
+          <input type="checkbox" name="Medical History" value="Covid-19"> Covid-19
+        </label><br>
+        <label>
+          <input type="checkbox" name="Medical History" value="Flu"> Flu
+        </label><br>
+        <label>
+          <input type="checkbox" name="Medical History" value="Mumps"> Mumps
+        </label><br>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="3"><strong>Do you own or rent your home?</strong></td>
+  </tr>
+
+  <tr>
+    <td colspan="3">
+      <label>
+        <input type="radio" name="living situation " value="own" required>Own
+      </label><br>
+      <label>
+        <input type="radio" name="living situation " value="Rent" required>Rent
+      </label><br>
+      <label>
+        <input type="radio" name="living situation " value="Unsure" required>Unsure/In-process
+      </label><br>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="3"><strong>Have you been vacinated?</strong></td>
+  </tr>
+  
+  <tr>
+    <td colspan="3">
+      <label>
+        <input type="radio" name="Vacinated " value="Yes" required>Yes
+      </label><br>
+      <label>
+        <input type="radio" name="Vacinated " value="NO" required>No
+      </label><br>
+      <label>
+        <input type="radio" name="Vacinated " value="Prefer not to say" required>Prefer not to say
+      </label><br>
+    </td>
+  </tr>
+<!--end of block 4-->
+
+<tr>
+    <td><label for="desiredSalary">Desired Salary:</label></td>
+        <td>
+        <input type="range" id="desiredSalary" name="desiredSalary" min="20000" max="200000">
+        <p>Value:<span id="demo1"></span>
+  </td>
+</tr>
+
+<tr>
+  <td>
+   <label for="minumum price"> Minumim Home price :</label>
+  </td>
+  <td>
+   <input type="range" id="min-price" name="min-price" min="60000" max="300000" step="10000" value="60000"><br>
+   <span class="value-label">Default: $60,000</span>
+  </td>
+</tr>
+  
+
+<tr>
+     <td>
+       <label for="minumum price">Max Home price:</label>
+     </td>
+
+     <td>
+       <input type="range" id="min-price" name="min-price" min="60000" max="500000" step="10000" value="500000"><br>
+       <span class="value-label">Default: $500,000</span>
+    </td>
+</tr>
+  
+<tr>
+   <td> <label for="Text Area">Text Area(Optional):</label><br></td>
+   <td> <textarea id="textarea" name="textarea" rows="5" cols="40" placeholder="Enter comments here"></textarea></td>
+</tr>
+
+<tr>
+  
+  <td><label for="userId">Desired User ID:</label></td>
+  <td><input type="text" id="UserId" name="UserId" pattern="^[a-zA-Z][a-zA-Z0-9_-]{4,29}$" title="5-30 characters No special characters allowed, >just letters, numbers (as long as the first character is NOT a number), and an underscore or dash and  NO SPACES."></td>
+ 
+ </tr>
+
+<tr>
+  
+    <td><label for="Password">Password:</label></td>
+    <td><input type="password" id="password" name="password" required title="Password must be 8-30 characters, contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."</td>
+  
+</tr>
+
+<tr>
+  
+  <td><label for="confirmPassword">Re-enter Password:</label></td>
+  <td><input type="password" id="confirmPassword" name="confirm Password" required></td>
+  <p id="message"></p>
+  
+
+</tr>
+
+  </table>
+      <button type="button" onclick="checkPassword() ">Review</button>
+      <input type="button" onclick="checkPassword()" value="Submit"/>
+      </form>
+      <script src="script.js"></script>
+    </div>
+    
+    
+    <p id="date"></p>
+
+<!-- put javascript inside, also externally too -->
+<script>
+const a = new Date();
+document.getElementById("date").innerHTML = a;
+</script>
+</body>
+</html>
+
+<!--end of file-->
 
         
 
@@ -79,6 +306,3 @@
       
 
 
-
-      </table>
-  </body> 
