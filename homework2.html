@@ -1,7 +1,7 @@
- <!-- Program name: homework2.html
+<!-- Program name: homework2.html
 Author: Faizan Baig, ID 2261920
 Date created: 10/01/24
-Date last edited: 10/11/24
+Date last edited: 10/15/24
 Version: 1.0 made edits along the way
 Description: This registration page will be updated to include a "Review" button, which will allow the user to review their
 information before submission.  -->
@@ -15,35 +15,35 @@ information before submission.  -->
 </head>
   
   <body>
-    <div class="validation"
-    <form id="registrationForm">
+    
+    <form action="homework1-thankyou.html" id="userForm">
       <table>
         
+  <!--First name, middle and last boxes-->
        <tr>
-        <td><lable for ="firstName">First Name:</lable></td>
-          <td><input type="text" id="firstName" name="firstName" maxlength="30" pattern="[A-Za-z' -]{1,30}+" title="Only letters, apostrophes, and dashes are allowed." required></td>
-          <td><span class="error" id="firstNameError"></span></td>
-       </tr>
-        
-        <tr>
-          <td><lable for ="middleInitial">Middle Initial:</lable></td>
-          <td><input type="text" id="middleinitial" name="middleinitial" maxlength="1" pattern="[A-Za-z]?" title="1 character, letters only, no numbers, blank/null ok." required></td>
-          <td><span class="error" id="middleinitialError"></span></td>
-        </tr>
-         
-        <tr>
-         <td><lable for ="lastName">Last Name:</lable></td>
-          <td><input type="text" id="LastName" name="LastName" maxlength="30" pattern="[A-Za-z' -\d]{1,30}" title="Only letters, apostrophes, dashes, and numbers (2 to 5) are allowed.." required></td>
-          <td><span class="error" id="LastNameError"></span></td>
-        </tr>
+    <td><label for="firstName">First Name:</label></td>
+    <td><input type="text" id="firstName" name="firstName" maxlength="30" pattern="[A-Za-z' -]{1,30}" title="Only letters, apostrophes, and dashes are allowed." required></td>
+    <td><span class="error" id="name_error"></span></td>
+</tr>
+<tr>
+    <td><label for="middleInitial">Middle Initial:</label></td>
+    <td><input type="text" id="middleInitial" name="middleInitial" maxlength="1" pattern="[A-Za-z]?" title="1 character, letters only, no numbers, blank/null ok." required></td>
+    <td><span class="error" id="middleinitialError"></span></td>
+</tr>
+<tr>
+    <td><label for="lastName">Last Name:</label></td>
+    <td><input type="text" id="lastName" name="lastName" maxlength="30" pattern="[A-Za-z' -]{1,30}" title="Only letters, apostrophes, and dashes are allowed." required></td>
+    <td><span class="error" id="LastNameError"></span></td>
+</tr>
 
+<!--Social security-->
         <tr>
           <td><lable for ="ssn">Social Security Number:</lable></td>
           <td><input type="text" id="SSN" name="SSN" maxlength="11" pattern="\d{3}-\d{2}-\d{4}" title="Valid Format:xxx-xx-xxxx " required></td>
           <td><span class="error" id="ssnError"></span></td>
         </tr>
 
-        <!-- 3 dates-->
+        <!-- 3 dates birthdate, movie in date and travel date-->
 
         <tr>
           <td><label for="birthDate">Birth Date (MM/DD/YYYY):</label></td>
@@ -64,7 +64,7 @@ information before submission.  -->
         </tr>
 
         <!--End of block 1-->
-
+      <!--Email, and phone-->
         <tr>
           <td><label for="email">Email:</label></td>
           <td><input type="email" id="email" name="Email" title="Please enter valid email: name@domain.tld" required></td>
@@ -78,7 +78,7 @@ information before submission.  -->
         </tr>
 
         <!--End of block 2-->
-        
+        <!--Adress, city and state-->
         <tr>
           <td><label for="address1">Address Line 1:</label></td>
           <td><input type="text" id="adress1" name="adress1" minlength="2" maxlength="30" title="2-30 characters" required></td>
@@ -155,7 +155,7 @@ information before submission.  -->
                 <td><span class="error-message" id="ZipCode Error"></span></td>
           </tr>
       <!--end of block 3-->
-      
+      <!--Medical history checkboxes-->
       <tr>
         <td colspan="3"<strong><b>Medical History Check all that apply:</b></strong></td>
       </tr>
@@ -183,6 +183,8 @@ information before submission.  -->
     <td colspan="3"><strong>Do you own or rent your home?</strong></td>
   </tr>
 
+  <!--Living situation-->
+
   <tr>
     <td colspan="3">
       <label>
@@ -196,7 +198,7 @@ information before submission.  -->
       </label><br>
     </td>
   </tr>
-
+<!--Vacination Status-->
   <tr>
     <td colspan="3"><strong>Have you been vacinated?</strong></td>
   </tr>
@@ -215,80 +217,93 @@ information before submission.  -->
     </td>
   </tr>
 <!--end of block 4-->
+<!--Slide range for all 3, Salary, min-home price and max-->
 
 <tr>
-    <td><label for="desiredSalary">Desired Salary:</label></td>
-        <td>
-        <input type="range" id="desiredSalary" name="desiredSalary" min="20000" max="200000">
-        <p>Value:<span id="demo1"></span>
-  </td>
-</tr>
-
-<tr>
-  <td>
-   <label for="minumum price"> Minumim Home price :</label>
-  </td>
-  <td>
-   <input type="range" id="min-price" name="min-price" min="60000" max="300000" step="10000" value="60000"><br>
-   <span class="value-label">Default: $60,000</span>
-  </td>
-</tr>
-  
-
-<tr>
-     <td>
-       <label for="minumum price">Max Home price:</label>
-     </td>
-
-     <td>
-       <input type="range" id="min-price" name="min-price" min="60000" max="500000" step="10000" value="500000"><br>
-       <span class="value-label">Default: $500,000</span>
+    <td>
+      <label for="myRangemin">Desired Salary $20,000-200,000:</label>
     </td>
-</tr>
+    <td>
+      <div class="slidecontainer">
+        <input type="range" min="20000" max="200000" step="10000" 
+               class="slider" id="myRangemin" value="20000">
+              <p>Value Range: <span id="price-label"></span></p>
+      </div>
+    </td>
   
+    </td>
+  </tr>
+
+<tr>
+    <td>
+      <label for="myRange">Minimum Home Price $60,000-300,000:</label>
+    </td>
+    <td>
+      <div class="minhomeprice">
+        <input type="range" min="60000" max="300000" value="65000" class="slider" id="myRange">
+        <p>Value Range: <span id="demo2"></span></p>
+      </div>
+    </td>
+  </tr>
+
+<tr>
+      <td>
+        <label for="max-price">Max Home Price $60,000-500,000:</label>
+      </td>
+      <td>
+        <div class="slidecontainer">
+          <input type="range" id="max-price" name="max-price" 
+                 min="60000" max="500000" step="10000" value="500000" 
+                 class="slider">
+          <p>Value Range: <span id="max-price-label"></span></p>
+        </div>
+      </td>
+    </tr>
+<!--Text area for user-->
 <tr>
    <td> <label for="Text Area">Text Area(Optional):</label><br></td>
    <td> <textarea id="textarea" name="textarea" rows="5" cols="40" placeholder="Enter comments here"></textarea></td>
 </tr>
-
+<!--User id box-->
 <tr>
   
   <td><label for="userId">Desired User ID:</label></td>
   <td><input type="text" id="UserId" name="UserId" pattern="^[a-zA-Z][a-zA-Z0-9_-]{4,29}$" title="5-30 characters No special characters allowed, >just letters, numbers (as long as the first character is NOT a number), and an underscore or dash and  NO SPACES."></td>
  
  </tr>
-
+<!--Password, and confirm password box-->
 <tr>
-  
-    <td><label for="Password">Password:</label></td>
-    <td><input type="password" id="password" name="password" required title="Password must be 8-30 characters, contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."</td>
-  
+    <td><label for="password">Password:</label></td>
+    <td><input type="password" id="password" name="password" required title="Password must be 8-30 characters, contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."></td>
+    <td><span class="error" id="passwordError"></span></td>
 </tr>
-
 <tr>
-  
-  <td><label for="confirmPassword">Re-enter Password:</label></td>
-  <td><input type="password" id="confirmPassword" name="confirm Password" required></td>
-  <p id="message"></p>
-  
-
+    <td><label for="confirmPassword">Re-enter Password:</label></td>
+    <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+    <td><span class="error" id="confirmPasswordError"></span></td>
 </tr>
+</table>
 
-  </table>
-      <button type="button" onclick="checkPassword() ">Review</button>
-      <input type="button" onclick="checkPassword()" value="Submit"/>
+<!--Submit and review button-->
+<tr>
+    <button type="submit">Submit:</button>
+    <button type="review">Review:</button>
+  </tr>
+    </table>
+
+    
       </form>
       <script src="script.js"></script>
-    </div>
-    
-    
-    <p id="date"></p>
+ 
+ <p id="date"></p>
 
 <!-- put javascript inside, also externally too -->
 <script>
 const a = new Date();
 document.getElementById("date").innerHTML = a;
 </script>
+
+
 </body>
 </html>
 
